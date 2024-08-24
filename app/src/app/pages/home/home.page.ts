@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Product } from 'src/app/models/product.model';
+
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { Product } from 'src/app/models/product.model';
 })
 export class HomePage implements OnInit {
 
-  products: Product[] = [
+  recentProducts: Product[] = [
     {
       id: '1',
       title: 'Zapatillas',
@@ -47,9 +49,17 @@ export class HomePage implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private navCtrl : NavController) { }
 
   ngOnInit() {
+  }
+
+  navigateToReport(){
+    this.navCtrl.navigateForward('/report');
+  }
+
+  navigateToFind(){
+    this.navCtrl.navigateForward('/find');
   }
 
 }
