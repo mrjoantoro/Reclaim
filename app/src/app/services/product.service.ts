@@ -11,20 +11,38 @@ export class ProductService {
   private static products: Product[] = [
     {
       id: '1',
-      title: 'Teléfono iPhone 12',
-      description: 'Teléfono encontrado en el parque central.',
-      imageUrl: 'https://example.com/image1.jpg',
+      title: 'Zapatillas',
+      description: 'Zapillas blancas terrible pulentas',
+      imageUrl: 'https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/126979469_01/w=1500,h=1500,fit=pad',
       status: 'Encontrado',
-      location: 'Parque Central',
+      location: 'En el baño',
       dateReported: new Date()
     },
     {
       id: '2',
-      title: 'Mochila Negra',
-      description: 'Mochila perdida en el metro línea 1.',
-      imageUrl: 'https://example.com/image2.jpg',
-      status: 'Reportado',
-      location: 'Metro Línea 1',
+      title: 'iPhone 14',
+      description: 'iPhone 14 negro black wazap',
+      imageUrl: 'https://d1aqw5mz0wngqe.cloudfront.net/images/spree/images/2123123/attachments/large/Apple_iPhone_14_Midnight_1A.jpg?1678205819',
+      status: 'Encontrado',
+      location: 'Laboratorio LPC11',
+      dateReported: new Date()
+    },
+    {
+      id: '3',
+      title: 'Product 3',
+      description: 'Description 3',
+      imageUrl: 'https://picsum.photos/200/300',
+      status: 'Validado',
+      location: 'Calle 3',
+      dateReported: new Date()
+    },
+    {
+      id: '4',
+      title: 'Product 4',
+      description: 'Description 4',
+      imageUrl: 'https://picsum.photos/200/300',
+      status: 'Entregado',
+      location: 'Calle 4',
       dateReported: new Date()
     }
   ];

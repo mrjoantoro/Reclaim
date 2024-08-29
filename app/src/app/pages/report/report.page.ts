@@ -14,7 +14,7 @@ export class ReportPage {
   constructor(
     private fb: FormBuilder,
     private navCtrl: NavController,
-    private productService: ProductService
+    private productSvc: ProductService
   ) {
     this.initializeForm();
   }
@@ -31,9 +31,11 @@ export class ReportPage {
 
   submitReport() {
     if (this.reportForm.valid) {
-      this.productService.addProduct(this.reportForm.value).then(() => {
+      this.productSvc.addProduct(this.reportForm.value).then(() => {
         this.navCtrl.navigateBack('/home');
       });
+    } else {
+      console.log('Form is not valid');
     }
   }
 }
