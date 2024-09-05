@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
 import { NavController } from '@ionic/angular';
-import { User } from '../../models/user.model';
+import { User } from 'src/app/models/user.mode';
+import { AuthService } from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-user-profile',

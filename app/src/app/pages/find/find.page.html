@@ -1,15 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Buscar Producto Encontrado</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header-custom [title]="'Find'" [showBackButton]="true" [showProfileButton]="true"></app-header-custom>
 <ion-content>
-  <ion-searchbar
-    [(ngModel)]="searchTerm"
-    (ionInput)="filterProducts()"
-    placeholder="Buscar por título, descripción o ubicación">
-  </ion-searchbar>
+  <!-- Implementación de SearchBar -->
+  <app-search-bar (searchChanged)="filterProducts($event)"></app-search-bar>
 
   <ion-list>
     <ion-item *ngFor="let product of filteredProducts" (click)="viewProduct(product.id!)">

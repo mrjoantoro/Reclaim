@@ -7,25 +7,27 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent  implements OnInit {
-  @Input() product?: Product;
+  @Input() product?: Product; // Recibe un objeto Product como entrada
 
   constructor() { }
 
   getStatusColor(status?: string): string {
     switch (status) {
-      case 'Reportado':
+      case "Reportado":
         return 'warning';
-      case 'Encontrado':
+      case "Encontrado":
         return 'success';
-      case 'Validado':
+      case "Validado":
         return 'tertiary';
-      case 'Entregado':
+      case "Entregado":
         return 'medium';
       default:
         return 'primary';
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
 }

@@ -1,22 +1,23 @@
 ion-card {
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 
   &:hover {
-    transition: scale(1.02);
+    transform: scale(1.02);
   }
 
   ion-img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     max-height: 200px;
+    object-fit: cover;
   }
 
   ion-card-title {
     font-size: 1.4rem;
     font-weight: bold;
-    margin:0;
+    margin: 0;
   }
 
   ion-note {

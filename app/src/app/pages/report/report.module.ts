@@ -14,10 +14,10 @@ import { SharedModule } from 'src/app/components/shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
     ReportPageRoutingModule,
+    ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [ReportPage]
+  declarations: [ReportPage],
 })
 export class ReportPageModule {}

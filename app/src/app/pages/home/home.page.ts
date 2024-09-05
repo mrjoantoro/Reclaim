@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/product.model';
-import { ProductService } from '../../services/product.service';
-
 
 @Component({
   selector: 'app-home',
@@ -10,25 +9,26 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
   recentProducts: Product[] = [];
 
-  constructor(private navCtrl : NavController, private productService: ProductService) { }
+  constructor(private navCtrl: NavController, private productSrv: ProductService) { }
 
   ngOnInit() {
-    this.loadProducts();
+    this.loadproducts();
   }
 
-  loadProducts() {
-    this.productService.getProducts().subscribe((products) => {
+  loadproducts(){
+    this.productSrv.getProducts().subscribe((products) => {
       this.recentProducts = products;
     });
   }
 
-  navigateToReport(){
+  navigateToReport() {
     this.navCtrl.navigateForward('/report');
   }
 
-  navigateToFind(){
+  navigateToFind() {
     this.navCtrl.navigateForward('/find');
   }
 
