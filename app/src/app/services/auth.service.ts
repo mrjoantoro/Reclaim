@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User } from '../models/user.mode';
+import { User } from '../models/user.model';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private users: { email: string, password: string }[] = [];
-  private currentUser: { email: string } | null = null;
+  private users: User[] = [];
+  private currentUser: User | null = null;
 
   constructor() { }
 
-  register(email: string, password: string): boolean {
+  register(user: User): boolean {
     // Verificar si el usuario existe
-    const userExists = this.users.some(user => user.email === email);
+    const userExists = this.users.some(u => u.email === user.email);
     if(userExists) {
       return false; //Usuario ya existe
     }
 
     // Agrega un nuevo usuario
-    this.users.push({ email, password });
+    this.users.push(user);
     return true;
   }
 
@@ -41,8 +41,15 @@ export class AuthService {
     return this.currentUser !== null; // Verifica si hay un usuario logeado
   }
 
-  getCurrentUser(): { email: string } | null {
+  getCurrentUser(): User | null {
     return this.currentUser;
+  }
+
+  updateUser(user: User): void {
+    const index = this.users.findIndex(u => u.email === user.email);
+    if (index !== -1) {
+      this.users[index] = user;
+    }
   }
 
 }

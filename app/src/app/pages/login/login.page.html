@@ -1,8 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Iniciar Sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-custom [title]="'Login'" [showBackButton]="false" [showProfileButton]="false"></app-header-custom>
+
 
 <ion-content>
   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">

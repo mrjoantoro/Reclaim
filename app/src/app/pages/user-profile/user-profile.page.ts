@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
-import { User } from 'src/app/models/user.mode';
+import { User } from 'src/app/models/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserProfilePage implements OnInit {
   profileForm!: FormGroup;
-  currentUser: any | null = null;
+  currentUser: User | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -35,7 +35,7 @@ export class UserProfilePage implements OnInit {
 
   updateProfile() {
     if (this.profileForm.valid) {
-      alert('Work in progress');
+      this.authService.updateUser(this.profileForm.value as User);
     }
   }
 
