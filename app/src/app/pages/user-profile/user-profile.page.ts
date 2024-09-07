@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserProfilePage implements OnInit {
   profileForm!: FormGroup;
-  currentUser: User | null = null;
+  currentUser: any | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -35,15 +35,11 @@ export class UserProfilePage implements OnInit {
 
   updateProfile() {
     if (this.profileForm.valid) {
-      this.authService.updateUserProfile(this.profileForm.value).then(() => {
-        this.navCtrl.back(); // Navega hacia atrás después de actualizar
-      });
+      alert('Work in progress');
     }
   }
 
   logout() {
-    this.authService.logout().then(() => {
-      this.navCtrl.navigateRoot('/login'); // Redirige al login después de cerrar sesión
-    });
+    this.authService.logout();
   }
 }
