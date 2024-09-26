@@ -5,7 +5,14 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class AuthService {
-  private users: User[] = [];
+  private users: User[] = [
+    {
+      uid: '1',
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      password: '123456',
+    }
+  ];
   private currentUser: User | null = null;
 
   constructor() { }
