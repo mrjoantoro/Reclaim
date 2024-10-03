@@ -4,11 +4,12 @@ import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'login', pathMatch: 'full'
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
-    path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
-    canActivate: [authGuard]
+    path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'report', loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule),
@@ -35,9 +36,8 @@ const routes: Routes = [
   {
     path: 'not-found', loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
-  // Ruta comodín para manejar los errores 404
   {
-    path: '**', redirectTo: 'not-found', pathMatch: 'full'
+    path: '**', redirectTo: 'not-found'
   }
 ];
 

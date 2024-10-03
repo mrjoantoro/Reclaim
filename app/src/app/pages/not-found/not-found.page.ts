@@ -13,8 +13,8 @@ export class NotFoundPage implements OnInit {
   ngOnInit() {
   }
 
-  goHome(){
-    this.navCtrl.navigateRoot('/home');
+  goHome() {
+    this.navCtrl.navigateForward('/home');
   }
 
 }
