@@ -31,7 +31,7 @@ export class RegisterPage implements OnInit {
   async onRegister() {
     const user = this.registerForm.value as User;
     try {
-      const result = await this.authService.resetPassword(user.email); //await this.authService.register(user);
+      const result = await this.authService.register(user);
       console.log('Registro exitoso', result);
     } catch (error) {
       console.log('Error al registrar', error);

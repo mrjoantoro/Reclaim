@@ -10,7 +10,7 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./item-detail.page.scss'],
 })
 export class ItemDetailPage implements OnInit {
-  product: Product | undefined;
+  product!: Product | null;
 
   constructor(
     private route: ActivatedRoute,
